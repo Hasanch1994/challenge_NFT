@@ -12,6 +12,7 @@ const Index = () => {
 };
 
 const MainWrapper = styled.main`
+  width: 100%;
   display: flex;
   flex-direction: row;
   gap: 24px;

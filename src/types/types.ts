@@ -3,3 +3,8 @@ export type NavigationTypes = {
   title: string;
   sub?: NavigationTypes; // sub is not requires
 };
+
+export type TabType = {
+  title: string;
+  content: React.ReactNode;
+};
