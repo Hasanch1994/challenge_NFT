@@ -1,0 +1,122 @@
+:root {
+  line-height: normal;
+  font-weight: 500;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  -webkit-text-size-adjust: 100%;
+
+  /* colors */
+  --main-color: #131821;
+  --second-color: #181f2b;
+  --third-color: #202831
+  --white-color: #ffffff;
+  background-color: var(--main-color);
+}
+
+  @font-face {
+    font-family: "riftMedium";
+    font-style: "normal";
+    src: url("assets/fonts/Rift-Medium.eot");
+    src: url("assets/fonts/Rift-Medium.woff") format("woff"),
+      url("assets/fonts/Rift-Medium.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "riftBold";
+    font-style: "normal";
+    src: url("assets/fonts/Rift-Bold.eot");
+    src: url("assets/fonts/Rift-Bold.woff") format("woff"),
+      url("assets/fonts/Rift-Bold.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "acuminproRegular";
+    font-weight: "normal";
+    src: url("assets/fonts/AcuminPro-Regular.eot");
+    src: url("assets/fonts/AcuminPro-Regular.woff") format("woff"),
+      url("assets/fonts/AcuminPro-Regular.ttf") format("truetype");
+  }
+
+
+  @font-face {
+    font-family: "acuminproBold";
+    font-weight: "bold";
+    src: url("assets/fonts/AcuminPro-Bold.eot");
+    src: url("assets/fonts/AcuminPro-Bold.woff") format("woff"),
+      url("assets/fonts/AcuminPro-Bold.ttf") format("truetype");
+  }
+
+.container {
+  max-width: 1440px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.circleImage{
+  border-radius: 50%;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 360px;
+  min-height: 100vh;
+}
+
+
+@media screen and (max-width:1024px) {
+  .hidableItem{
+    display: none;
+  }
+}
+
+.riftMediumFamily{
+  font-family: 'riftMedium';
+}
+
+.riftBoldFamily{
+  font-family: 'riftBold';
+}
+
+.acuminproRegularFamily{
+  font-family: 'acuminproRegular';
+}
+
+.acuminproBoldFamily{
+  font-family: 'acuminproBold';
+}
+
+
+h3{
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.80);
+  font-family: 'riftMedium';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px
+}
+
+h4{
+  color: #9099A3;
+  font-family: 'riftMedium';
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.dateStyle{
+  color: #FFF;
+  font-family: 'riftMedium';
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 62px; 
+}

@@ -1,0 +1,30 @@
+ul {
+  list-style-type: none;
+}
+
+ul > li {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+a {
+  font-family: "riftBold";
+  color: var(--white-color);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  display: flex;
+  align-items: center; /* Align text and icon vertically */
+}
+
+/* Add space between arrow icon and title */
+a > span {
+  margin-left: 7px;
+}
+
+a:hover {
+  cursor: pointer;
+}

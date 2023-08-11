@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Rift';
+    src: url('Rift-Medium.eot');
+    src: url('Rift-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Rift-Medium.woff2') format('woff2'),
+        url('Rift-Medium.woff') format('woff'),
+        url('Rift-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rift';
+    src: url('Rift-Medium_1.eot');
+    src: url('Rift-Medium_1.eot?#iefix') format('embedded-opentype'),
+        url('Rift-Medium_1.woff2') format('woff2'),
+        url('Rift-Medium_1.woff') format('woff'),
+        url('Rift-Medium_1.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rift';
+    src: url('Rift-Regular.eot');
+    src: url('Rift-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Rift-Regular.woff2') format('woff2'),
+        url('Rift-Regular.woff') format('woff'),
+        url('Rift-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rift';
+    src: url('Rift-Bold.eot');
+    src: url('Rift-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Rift-Bold.woff2') format('woff2'),
+        url('Rift-Bold.woff') format('woff'),
+        url('Rift-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
