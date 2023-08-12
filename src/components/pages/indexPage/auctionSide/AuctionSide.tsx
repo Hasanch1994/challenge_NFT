@@ -389,7 +389,7 @@ interface HidableBoxProps {
   isFixed: boolean;
 }
 const HidableBox = styled(Box)<HidableBoxProps>`
-  @media (max-width: 768px) {
+  @media (max-width: 1360px) {
     display: ${({ isFixed }) => (isFixed ? "none" : "flex")};
   }
 `;

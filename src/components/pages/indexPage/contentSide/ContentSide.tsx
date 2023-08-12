@@ -46,7 +46,7 @@ const ContentSide: React.FC = () => {
         />
         <H1>{nftTitle}</H1>
 
-        <ResponsiveBox direction="row">
+        <ResponsiveBox direction="row" style={{gap:"16px"}}>
           <Box style={{ flex: 1 }}>
             <ResponsiveImage
               src={ImagePoint}
@@ -91,13 +91,13 @@ const ResponsiveImage = styled(Image)`
 `;
 
 const SmallAuction = styled(Box)`
-  @media (min-width: 768px) {
+  @media (min-width: 1360px) {
     display: none;
   }
 `;
 
 const ResponsiveBox = styled(Box)`
-  @media (min-width: 360px) {
+  @media (max-width: 360px) {
     flex-direction: column;
   }
 `;
