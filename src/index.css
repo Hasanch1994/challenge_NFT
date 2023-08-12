@@ -48,6 +48,35 @@
       url("assets/fonts/AcuminPro-Bold.ttf") format("truetype");
   }
 
+
+  /* change the scroll style  */
+
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the thumb */
+  border-radius: 5px; /* Rounded corners on the thumb */
+}
+
+/* Change the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Change the scrollbar track on hover */
+::-webkit-scrollbar-track:hover {
+  background-color: #202831;
+}
+
+/* Change the scrollbar corner */
+::-webkit-scrollbar-corner {
+  background-color: #f1f1f1;
+}
+
+
+
 .container {
   max-width: 1440px;
   display: flex;
@@ -67,13 +96,6 @@
 body {
   min-width: 360px;
   min-height: 100vh;
-}
-
-
-@media screen and (max-width:1024px) {
-  .hidableItem{
-    display: none;
-  }
 }
 
 .riftMediumFamily{

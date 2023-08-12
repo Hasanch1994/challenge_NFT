@@ -2,7 +2,8 @@ import React from "react";
 import Box from "../../../../ui/box/Box";
 import H2 from "../../../../ui/heading/h2/H2";
 import P from "../../../../ui/paragraph/P";
-import H3 from "../../../../ui/heading/h3/H3";
+import Attributes from "./attributes/Attributes";
+import Details from "./details/Details";
 
 const AboutTabItem: React.FC = () => {
   return (
@@ -22,17 +23,8 @@ const AboutTabItem: React.FC = () => {
         </P>
       </Box>
 
-      <Box
-        style={{
-          padding: "16px 24px",
-          backgroundColor: "#171F2C",
-          boxShadow: "0px 5px 10px 0px rgba(0, 0, 0, 0.25)",
-        }}
-      >
-        <H3 mode="Rift" size={24} transform="uppercase" ts="italic">
-          Attributes
-        </H3>
-      </Box>
+      <Attributes />
+      <Details />
     </Box>
   );
 };

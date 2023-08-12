@@ -5,22 +5,22 @@ interface Props {
   size: number;
   ts: "italic" | "normal";
   transform: "uppercase" | "lowercase";
-  s?: string;
+  color?: string;
 }
 
-const H3 = styled.h3<Props>`
+const H4 = styled.h4<Props>`
   font-family: ${({ mode }) =>
     mode === "Rift" ? "riftBold" : "acuminproRegular"};
   font-weight: 700;
-  color: ${({ s }) =>
-    s
-      ? `#
-  ${s}`
-      : "white"};
+  color: ${({ color }) =>
+  color
+      ? 
+  color
+  : "white"};
   font-style: ${({ ts }) => (ts ? ts : "normal")};
-  font-size: ${({ size }) => size}px;
+font-size: ${({ size }) => size}px;
   text-transform: ${({ transform }) => transform};
 `;
 
 // eslint-disable-next-line react-refresh/only-export-components
-export default H3;
+export default H4;

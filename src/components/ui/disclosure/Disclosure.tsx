@@ -12,7 +12,7 @@ const Disclosure: React.FC<Props> = ({ button, content }) => {
     setIsOpen((pre) => !pre);
   };
   return (
-    <Box style={{gap:"17px"}}>
+    <Box style={{ gap: "17px" }}>
       <ButtonWrapper onClick={handleClick}>
         {button}
         <ArrowIconWrapper isOpen={isOpen}>
@@ -62,8 +62,8 @@ const ButtonWrapper = styled.span`
 
 const ArrowIconWrapper = styled.span<WrapperProps>`
   transform: rotate(${({ isOpen }) => (isOpen ? "180deg" : "0deg")});
+  transform-origin: 50% 50%;
   transition: transform 0.3s ease-in-out;
-  padding-left: 8px;
 `;
 
 export default Disclosure;

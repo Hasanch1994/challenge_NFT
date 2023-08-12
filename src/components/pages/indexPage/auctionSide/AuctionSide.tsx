@@ -3,13 +3,14 @@ import Button from "../../../ui/button/Button";
 import Disclosure from "../../../ui/disclosure/Disclosure";
 import TermsDisclosureButton from "../../../ui/disclosure/termsDisclosure/TDButton";
 import TermsDisclosureContent from "../../../ui/disclosure/termsDisclosure/TDContent";
+import H2 from "../../../ui/heading/h2/H2";
+import H4 from "../../../ui/heading/h4/H4";
 
 const AuctionSide: React.FC = () => {
   return (
-    <div
+    <Box
+      direction="column"
       style={{
-        display: "flex",
-        flexDirection: "column",
         flex: 1,
       }}
     >
@@ -23,19 +24,30 @@ const AuctionSide: React.FC = () => {
           gap: 22,
         }}
       >
-        <h3>Auction</h3>
+        <H2 mode="Rift" size={18} color="rgba(255, 255, 255, 0.80)">
+          Auction
+        </H2>
+
         <Box style={{ gap: 8 }}>
-          <div style={{ display: "flex", flexDirection: "row", gap: 8 }}>
+          <Box direction="row" style={{ gap: "8px" }}>
             <Box
               style={{
                 borderRadius: "8px",
                 backgroundColor: "#202831",
                 padding: "8px 12px",
-                gap: 4,
+                gap: "4px",
                 flex: 1,
               }}
             >
-              <h4>auction start date</h4>
+              <H4
+                mode="Rift"
+                size={18}
+                color="#9099A3"
+                transform="uppercase"
+                ts="normal"
+              >
+                auction start date
+              </H4>
               <span className="dateStyle">24.10.2022</span>
             </Box>
 
@@ -51,7 +63,7 @@ const AuctionSide: React.FC = () => {
               <h4>auction end date</h4>
               <span className="dateStyle">07.11.2022</span>
             </Box>
-          </div>
+          </Box>
 
           <Box
             style={{
@@ -62,8 +74,16 @@ const AuctionSide: React.FC = () => {
               flex: 1,
             }}
           >
-            <h4>auction countdown in</h4>
-            <div style={{ display: "flex", flexDirection: "row", gap: 4 }}>
+            <H4
+              mode="Rift"
+              size={12}
+              color="#9099A3"
+              transform="uppercase"
+              ts="normal"
+            >
+              auction countdown in
+            </H4>
+            <Box direction="row" style={{ gap: "4px" }}>
               <Box
                 style={{
                   width: "138px",
@@ -216,7 +236,7 @@ const AuctionSide: React.FC = () => {
                   </span>
                 </span>
               </Box>
-            </div>
+            </Box>
           </Box>
 
           <Box
@@ -231,7 +251,15 @@ const AuctionSide: React.FC = () => {
               flex: 1,
             }}
           >
-            <h4>current bid</h4>
+            <H4
+              mode="Rift"
+              size={18}
+              color="#9099A3"
+              transform="uppercase"
+              ts="normal"
+            >
+              current bid
+            </H4>
             <span
               style={{
                 color: "#FFF",
@@ -266,12 +294,20 @@ const AuctionSide: React.FC = () => {
               padding: "10px 16px",
               justifyContent: "space-between",
               alignItems: "center",
-              gap: 4,
+              gap: "4px",
               flex: 1,
             }}
           >
             <Box>
-              <h4>set your bid</h4>
+              <H4
+                mode="Rift"
+                size={16}
+                color="#9099A3"
+                transform="uppercase"
+                ts="normal"
+              >
+                set your bid
+              </H4>{" "}
               <span
                 style={{
                   color: "#FFF",
@@ -287,13 +323,14 @@ const AuctionSide: React.FC = () => {
             <Box
               style={{
                 alignItems: "end",
+                gap: "2px",
               }}
             >
               <span
                 style={{
                   color: "#9099A3",
                   fontFeatureSettings: "'clig' off, 'liga' off",
-                  fontFamily: "sans-serif",
+                  fontFamily: "acuminproRegular",
                   fontSize: "14px",
                   fontWeight: 500,
                   lineHeight: "20px",
@@ -304,6 +341,7 @@ const AuctionSide: React.FC = () => {
 
               <button
                 style={{
+                  maxHeight: "28px",
                   display: "inline-flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -331,7 +369,7 @@ const AuctionSide: React.FC = () => {
           content={<TermsDisclosureContent />}
         />
       </Box>
-    </div>
+    </Box>
   );
 };
 

@@ -1,17 +1,18 @@
+import styled, { css } from "styled-components";
 import { navigationItems } from "../../../../fakeData/navigation";
-import "./navigation-styles.css";
 
 const HeaderNavigation: React.FC = () => {
   return (
-    <nav className="hidableItem">
-      <ul>
+    <Nav>
+      <UnorderedList>
         {navigationItems &&
           navigationItems.length > 0 &&
           navigationItems.map((item) => (
-            <li key={item.id}>
-              <a style={{ display: "flex", alignItems: "center", gap: 7 }}>
+            <ListItem key={item.id}>
+              <Anchor style={{ display: "flex", alignItems: "center", gap: 7 }}>
                 {item.title}{" "}
                 <svg
+                  className="hideArrow"
                   xmlns="http://www.w3.org/2000/svg"
                   width="10"
                   height="6"
@@ -23,12 +24,60 @@ const HeaderNavigation: React.FC = () => {
                     fill="white"
                   />
                 </svg>
-              </a>
-            </li>
-          ))}
-      </ul>
-    </nav>
+              </Anchor>
+            </ListItem>
+          ))} 
+      </UnorderedList>
+    </Nav>
   );
 };
+
+const hideArrow = css`
+  @media (max-width: 1280px) {
+    display: none;
+  }
+`;
+
+const Nav = styled.nav`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const UnorderedList = styled.ul`
+  list-style-type: none;
+`;
+
+const ListItem = styled.li`
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (max-width: 1440px) {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+`;
+
+const Anchor = styled.li`
+  font-family: "riftBold";
+  color: white;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  @media (max-width: 1440px) {
+    font-size: 14px;
+  }
+
+  .hideArrow {
+    ${hideArrow}
+  }
+`;
 
 export default HeaderNavigation;

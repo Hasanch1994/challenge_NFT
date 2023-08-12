@@ -57,6 +57,10 @@ const TabItem = styled.li<TabItemProps>`
   &:active {
     color: #00b4db;
   }
+
+  @media (max-width: 360px) {
+    font-size: 24px;
+  }
 `;
 
 const TabContent = styled.section`

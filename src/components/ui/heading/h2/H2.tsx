@@ -3,10 +3,12 @@ import styled from "styled-components";
 interface Props {
   mode: "Rift" | "Acumin";
   size: number;
+  color?:string
 }
 
 const H2 = styled.h2<Props>`
-  color: white;
+  color: ${({ color }) =>
+  color ? color :"white"};
   font-family: ${({ mode }) =>
     mode === "Rift" ? "riftMedium" : "acuminproRegular"};
   font-weight: 700;
