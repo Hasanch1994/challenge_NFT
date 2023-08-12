@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import Box from "../../../ui/box/Box";
 import Button from "../../../ui/button/Button";
 import Disclosure from "../../../ui/disclosure/Disclosure";
@@ -6,9 +7,14 @@ import TermsDisclosureContent from "../../../ui/disclosure/termsDisclosure/TDCon
 import H2 from "../../../ui/heading/h2/H2";
 import H4 from "../../../ui/heading/h4/H4";
 
-const AuctionSide: React.FC = () => {
+interface Props {
+  isFixed: boolean;
+}
+
+const AuctionSide: React.FC<Props> = ({ isFixed }) => {
   return (
-    <Box
+    <HidableBox
+      isFixed={isFixed}
       direction="column"
       style={{
         flex: 1,
@@ -16,8 +22,8 @@ const AuctionSide: React.FC = () => {
     >
       <Box
         style={{
-          position: "fixed",
-          width: "628px",
+          position: isFixed ? "fixed" : "static",
+          width: isFixed ? "628px" : "auto",
           backgroundColor: "#171F2C",
           borderRadius: "12px",
           padding: "24px",
@@ -29,7 +35,7 @@ const AuctionSide: React.FC = () => {
         </H2>
 
         <Box style={{ gap: 8 }}>
-          <Box direction="row" style={{ gap: "8px" }}>
+          <ResponsiveBox direction="row" style={{ gap: "8px" }}>
             <Box
               style={{
                 borderRadius: "8px",
@@ -63,7 +69,7 @@ const AuctionSide: React.FC = () => {
               <h4>auction end date</h4>
               <span className="dateStyle">07.11.2022</span>
             </Box>
-          </Box>
+          </ResponsiveBox>
 
           <Box
             style={{
@@ -86,7 +92,7 @@ const AuctionSide: React.FC = () => {
             <Box direction="row" style={{ gap: "4px" }}>
               <Box
                 style={{
-                  width: "138px",
+                  width: isFixed ? "138px" : "auto",
                   borderRadius: "8px",
                   backgroundColor: "#171F2C",
                   padding: "4px 12px",
@@ -125,7 +131,7 @@ const AuctionSide: React.FC = () => {
 
               <Box
                 style={{
-                  width: "138px",
+                  width: isFixed ? "138px" : "auto",
                   borderRadius: "8px",
                   backgroundColor: "#171F2C",
                   padding: "4px 12px",
@@ -163,7 +169,7 @@ const AuctionSide: React.FC = () => {
               </Box>
               <Box
                 style={{
-                  width: "138px",
+                  width: isFixed ? "138px" : "auto",
                   borderRadius: "8px",
                   backgroundColor: "#171F2C",
                   padding: "4px 12px",
@@ -201,7 +207,7 @@ const AuctionSide: React.FC = () => {
               </Box>
               <Box
                 style={{
-                  width: "138px",
+                  width: isFixed ? "138px" : "auto",
                   borderRadius: "8px",
                   backgroundColor: "#171F2C",
                   padding: "4px 12px",
@@ -369,8 +375,23 @@ const AuctionSide: React.FC = () => {
           content={<TermsDisclosureContent />}
         />
       </Box>
-    </Box>
+    </HidableBox>
   );
 };
+
+const ResponsiveBox = styled(Box)`
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+interface HidableBoxProps {
+  isFixed: boolean;
+}
+const HidableBox = styled(Box)<HidableBoxProps>`
+  @media (max-width: 768px) {
+    display: ${({ isFixed }) => (isFixed ? "none" : "flex")};
+  }
+`;
 
 export default AuctionSide;

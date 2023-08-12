@@ -6,6 +6,10 @@ const H1 = styled.h1`
   font-weight: 700;
   font-style: italic;
   font-size: 48px;
+
+  @media (max-width: 360px) {
+    font-size: 32px;
+  }
 `;
 
 // eslint-disable-next-line react-refresh/only-export-components

@@ -48,6 +48,7 @@ const TabItem = styled.li<TabItemProps>`
   font-style: italic;
   line-height: normal;
   display: inline-block;
+  margin-right:24px;
   cursor: pointer;
   transition: color ease-in-out 0.2s;
   &:hover {
@@ -60,6 +61,7 @@ const TabItem = styled.li<TabItemProps>`
 
   @media (max-width: 360px) {
     font-size: 24px;
+    margin-right:16px;
   }
 `;
 

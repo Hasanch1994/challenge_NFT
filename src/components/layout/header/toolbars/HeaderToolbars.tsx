@@ -1,7 +1,6 @@
 import NotificationIcon from "../../../icons/NotificationIcon";
 import SearchIcon from "../../../icons/SearchIcon";
 import AccountItem from "./AccountItem";
-import "./toolbars-styles.css";
 import profileImage from "../../../../assets/profile.png";
 import styled, { css } from "styled-components";
 import MenuIcon from "../../../icons/MenuIcon";

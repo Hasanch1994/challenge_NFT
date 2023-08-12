@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <MainWrapper>
       <ContentSide />
-      <AuctionSide />
+      <AuctionSide isFixed={true} />
     </MainWrapper>
   );
 };
