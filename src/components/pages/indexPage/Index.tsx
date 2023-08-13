@@ -1,8 +1,11 @@
 import styled from "styled-components";
 import AuctionSide from "./auctionSide/AuctionSide";
 import ContentSide from "./contentSide/ContentSide";
+import { useTitle } from "../../../hooks/useTitle";
 
 const Index = () => {
+  useTitle("Challenge Main");
+
   return (
     <MainWrapper>
       <ContentSide />
