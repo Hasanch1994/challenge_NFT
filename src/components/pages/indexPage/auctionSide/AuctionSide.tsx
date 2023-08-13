@@ -169,8 +169,8 @@ interface BoxProps {
 
 const FixableBox = styled(Box)<BoxProps>`
   position: ${({ isFixed }) => (isFixed ? "sticky" : "static")};
-  right: 0;
-  top: 120;
+  right: 0px;
+  top: 135px;
   width: 328px;
   background-color: #171f2c;
   border-radius: 12px;
