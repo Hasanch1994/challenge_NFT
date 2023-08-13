@@ -61,6 +61,7 @@ const AttributeItem: React.FC<AttributeType> = ({
 };
 
 const Article = styled.article`
+  max-height: 105px;
   border-radius: 10px;
   background-color: #202831;
   display: flex;

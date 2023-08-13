@@ -8,6 +8,8 @@ import { TabType } from "../../../../types/types";
 import AboutTabItem from "./aboutTabItem/AboutTabItem";
 import styled from "styled-components";
 import AuctionSide from "../auctionSide/AuctionSide";
+import useDisclosure from "../../../../hooks/useDisclosure";
+import FaqTabItem from "./faqTabItem/FaqTabItem";
 
 const tabs: TabType[] = [
   {
@@ -16,15 +18,16 @@ const tabs: TabType[] = [
   },
   {
     title: "FAQ",
-    content: <div>Content for Tab 2</div>,
+    content: <FaqTabItem />,
   },
   {
     title: "Bid history",
-    content: <div>Content for Tab 3</div>,
+    content: <FaqTabItem />,
   },
 ];
 
 const ContentSide: React.FC = () => {
+  const { isOpen: isTermsOpen } = useDisclosure();
   const nftTitle: string = "NFT - #1003 johan lomu";
   return (
     <div
@@ -45,7 +48,7 @@ const ContentSide: React.FC = () => {
         />
         <H1>{nftTitle}</H1>
 
-        <ResponsiveBox direction="row" style={{ gap: "16px" }}>
+        <ResponsiveBox isTermsOpen={isTermsOpen}>
           <Box style={{ flex: 1 }}>
             <ResponsiveImage src={ImagePoint} alt="image" title={nftTitle} />
           </Box>
@@ -111,13 +114,18 @@ const SmallAuction = styled(Box)`
   }
 `;
 
-const ResponsiveBox = styled(Box)`
+interface ResponsiveBoxProps {
+  isTermsOpen: boolean;
+}
+const ResponsiveBox = styled(Box)<ResponsiveBoxProps>`
+  gap: 16px;
   @media (min-width: 360px) {
     flex-direction: column;
   }
 
   @media (min-width: 768px) {
     flex-direction: row;
+    align-items: ${({ isTermsOpen }) => (isTermsOpen ? "end" : "start")};
   }
 `;
 

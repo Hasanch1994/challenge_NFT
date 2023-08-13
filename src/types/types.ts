@@ -20,3 +20,8 @@ export type AttributeType = Pick<TabType, "title"> & {
 export type DetailType = Omit<AttributeType, "type" | "percent">;
 
 export type CountDownType = Omit<AttributeType, "percent" | "title">;
+
+export type BaseContextType = {
+  termIsOpen: boolean;
+  handleTerms: (status: boolean) => void;
+};

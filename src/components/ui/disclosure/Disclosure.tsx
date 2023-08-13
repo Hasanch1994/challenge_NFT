@@ -1,19 +1,18 @@
 import Box from "../box/Box";
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import useDisclosure from "../../../hooks/useDisclosure";
 
 interface Props {
   button: React.ReactNode;
   content: React.ReactNode;
 }
 const Disclosure: React.FC<Props> = ({ button, content }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const handleClick = () => {
-    setIsOpen((pre) => !pre);
-  };
+  const { isOpen, toggleDisclosure } = useDisclosure();
+
   return (
     <Box style={{ gap: "17px" }}>
-      <ButtonWrapper onClick={handleClick}>
+      <ButtonWrapper onClick={toggleDisclosure}>
         {button}
         <ArrowIconWrapper isOpen={isOpen}>
           <svg
@@ -61,7 +60,7 @@ const ButtonWrapper = styled.span`
 `;
 
 const ArrowIconWrapper = styled.span<WrapperProps>`
-  transform: rotate(${({ isOpen }) => (isOpen ? "180deg" : "0deg")});
+  transform: rotate(${({ isOpen }) => (!isOpen ? "180deg" : "0deg")});
   transform-origin: 50% 50%;
   transition: transform 0.3s ease-in-out;
 `;

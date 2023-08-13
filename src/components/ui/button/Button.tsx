@@ -4,6 +4,7 @@ const Button = styled.button`
   display: flex;
   width: auto;
   height: 56px;
+  color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 22px 0px;
   justify-content: center;

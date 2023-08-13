@@ -16,7 +16,7 @@ const AuctionCountDownBoxItem: React.FC<CountDownType> = ({ type, value }) => {
 const CountDownBox = styled(Box)`
   border-radius: 8px;
   background-color: #171f2c;
-  padding: 4px 23px;
+  padding: 4px 16px;
   gap: 2px;
   flex: 1;
   align-content: center;
