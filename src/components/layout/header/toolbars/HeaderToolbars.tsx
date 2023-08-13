@@ -43,6 +43,7 @@ const ToolbarItem = styled.div<Props>`
   align-items: center;
   justify-content: center;
   gap: 10px;
+  cursor: pointer;
 
   ${({ index }) =>
     index === 2 &&
@@ -53,6 +54,12 @@ const ToolbarItem = styled.div<Props>`
 
   @media (min-width: 1440px) {
     display: ${({ index }) => (index !== 3 ? "flex" : "none")};
+  }
+
+  transition: transform ease-in-out 0.2s;
+
+  &:hover { 
+    transform: scale(1.1);
   }
 `;
 

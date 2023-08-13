@@ -6,15 +6,7 @@ import AttributeItem from "./AttributeItem";
 
 const Attributes = () => {
   return (
-    <Box
-      style={{
-        padding: "16px 24px",
-        backgroundColor: "#171F2C",
-        boxShadow: "0px 5px 10px 0px rgba(0, 0, 0, 0.25)",
-        gap: "16px",
-        borderRadius: "12px",
-      }}
-    >
+    <Container style={{}}>
       <H3 mode="Rift" size={24} transform="uppercase" ts="italic">
         Attributes
       </H3>
@@ -25,7 +17,7 @@ const Attributes = () => {
             <AttributeItem key={item.id} {...item} />
           ))}
       </GridContainer>
-    </Box>
+    </Container>
   );
 };
 
@@ -35,8 +27,19 @@ const GridContainer = styled.section`
   gap: 8px;
   overflow-x: auto;
 
-  @media (max-width: 360px) {
-    grid-template-columns: repeat(auto-fit, minmax(238px, 1fr));
+  @media (min-width: 760px) {
+    grid-template-columns: 1fr 1fr; /*same width with 1fr*/
+  }
+`;
+
+const Container = styled(Box)`
+  padding: 16px;
+  background-color: #171f2c;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+  gap: 16px;
+  border-radius: 12px;
+  @media (min-width: 768px) {
+    padding: 16px 24px;
   }
 `;
 export default Attributes;

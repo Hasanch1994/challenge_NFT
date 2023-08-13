@@ -6,15 +6,7 @@ import DetailItem from "./DetailItem";
 
 const Details = () => {
   return (
-    <Box
-      style={{
-        padding: "16px 24px",
-        backgroundColor: "#171F2C",
-        boxShadow: "0px 5px 10px 0px rgba(0, 0, 0, 0.25)",
-        gap: "16px",
-        borderRadius: "12px",
-      }}
-    >
+    <Container>
       <H3 mode="Rift" size={24} transform="uppercase" ts="italic">
         Details
       </H3>
@@ -23,7 +15,7 @@ const Details = () => {
         {detailItems &&
           detailItems.map((item) => <DetailItem key={item.id} {...item} />)}
       </ItemsContainer>
-    </Box>
+    </Container>
   );
 };
 
@@ -33,4 +25,14 @@ const ItemsContainer = styled.section`
   gap: 8px;
 `;
 
+const Container = styled(Box)`
+  padding: 16px;
+  background-color: #171f2c;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+  gap: 16px;
+  border-radius: 12px;
+  @media (min-width: 768px) {
+    padding: 16px 24px;
+  }
+`;
 export default Details;

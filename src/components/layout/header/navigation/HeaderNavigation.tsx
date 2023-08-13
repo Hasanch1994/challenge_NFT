@@ -32,12 +32,6 @@ const HeaderNavigation: React.FC = () => {
   );
 };
 
-// const hideArrow = css`
-//   @media (max-width: 1280px) {
-//     display: none;
-//   }
-// `;
-
 const Nav = styled.nav`
   display: none;
   @media (min-width: 1440px) {

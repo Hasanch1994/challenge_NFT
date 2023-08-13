@@ -67,6 +67,18 @@ const Article = styled.article`
   flex-direction: column;
   gap: 8px;
   padding: 16px;
+
+  @media (min-width: 360px) {
+    width: 238px;
+  }
+
+  @media (min-width: 760px) {
+    width: 300px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 238px;
+  }
 `;
 
 const Type = styled.p`

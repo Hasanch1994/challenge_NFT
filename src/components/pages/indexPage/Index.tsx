@@ -16,7 +16,9 @@ const MainWrapper = styled.main`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 24px;
+  @media (min-width: 768px) {
+    gap: 24px;
+  }
 `;
 
 export default Index;

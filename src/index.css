@@ -49,10 +49,14 @@
   }
 
 
-  /* change the scroll style  */
-
 ::-webkit-scrollbar {
-  width: 10px; 
+  width: 3px; 
+}
+
+@media screen and (min-width:768px) {
+  ::-webkit-scrollbar {
+    width: 10px; 
+  }
 }
 
 ::-webkit-scrollbar-thumb {
@@ -73,11 +77,6 @@
 /* Change the scrollbar corner */
 ::-webkit-scrollbar-corner {
   background-color: #f1f1f1;
-}
-
-
-.circleImage{
-  border-radius: 50%;
 }
 
 *{
@@ -105,33 +104,4 @@ body {
 
 .acuminproBoldFamily{
   font-family: 'acuminproBold';
-}
-
-
-h3{
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.80);
-  font-family: 'riftMedium';
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px
-}
-
-h4{
-  color: #9099A3;
-  font-family: 'riftMedium';
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 24px;
-  text-transform: uppercase;
-}
-
-.dateStyle{
-  color: #FFF;
-  font-family: 'riftMedium';
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 62px; 
 }

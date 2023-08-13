@@ -1,3 +1,6 @@
+import styled from "styled-components";
+import Image from "../../../ui/image/Image";
+
 interface Props {
   title: string;
   image: string;
@@ -6,23 +9,8 @@ interface Props {
 const AccountItem: React.FC<Props> = ({ title, image }) => {
   return (
     <>
-      <img
-        src={image}
-        width="40"
-        height="40"
-        alt={title}
-        className="circleImage"
-      />
-      <span
-        style={{
-          fontFamily: "acuminproRegular",
-          fontSize: "16px",
-          fontWeight: "500",
-          color: "#F7F7F7",
-        }}
-      >
-        {title}
-      </span>
+      <Image src={image} width="40" height="40" alt={title} isCircle={true} />
+      <AccountName>{title}</AccountName>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -39,5 +27,13 @@ const AccountItem: React.FC<Props> = ({ title, image }) => {
     </>
   );
 };
+
+const AccountName = styled.span`
+  font-family: "acuminproRegular";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 0;
+  color: #f7f7f7;
+`;
 
 export default AccountItem;

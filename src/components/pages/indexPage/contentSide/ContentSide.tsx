@@ -47,13 +47,7 @@ const ContentSide: React.FC = () => {
 
         <ResponsiveBox direction="row" style={{ gap: "16px" }}>
           <Box style={{ flex: 1 }}>
-            <ResponsiveImage
-              src={ImagePoint}
-              width="100%"
-              height={580}
-              alt="image"
-              title={nftTitle}
-            />
+            <ResponsiveImage src={ImagePoint} alt="image" title={nftTitle} />
           </Box>
 
           <SmallAuction style={{ flex: 1 }}>
@@ -94,6 +88,7 @@ const ContainerContentBox = styled(Box)`
 `;
 
 const ResponsiveImage = styled(Image)`
+  border-radius: 12px;
   @media (min-width: 360px) {
     width: 328px;
     height: 328px;

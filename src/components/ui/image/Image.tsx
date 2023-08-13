@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const Image = styled.img`
+interface Props {
+  isCircle?: boolean;
+}
+
+const Image = styled.img<Props>`
   border-radius: 8px;
   transition: all ease-in-out 0.2s;
   cursor: pointer;
@@ -11,6 +15,8 @@ const Image = styled.img`
   &:active {
     filter: brightness(1);
   }
+
+  border-radius: ${({ isCircle }) => (isCircle ? "50%" : "0")};
 `;
 
 export default Image;

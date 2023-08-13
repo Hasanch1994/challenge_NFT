@@ -6,6 +6,8 @@ import TermsDisclosureButton from "../../../ui/disclosure/termsDisclosure/TDButt
 import TermsDisclosureContent from "../../../ui/disclosure/termsDisclosure/TDContent";
 import H2 from "../../../ui/heading/h2/H2";
 import H4 from "../../../ui/heading/h4/H4";
+import AuctionDateBox from "./AuctionDateBox";
+import AuctionCountDownBox from "./auctionCountDown/AuctionCountDownBox";
 
 interface Props {
   isFixed: boolean;
@@ -14,232 +16,18 @@ interface Props {
 const AuctionSide: React.FC<Props> = ({ isFixed }) => {
   return (
     <HidableBox isFixed={isFixed} direction="column">
-      <Box
-        style={{
-          position: isFixed ? "sticky" : "static",
-          right: 0,
-          top: 120,
-          width: isFixed ? "628px" : "auto",
-          backgroundColor: "#171F2C",
-          borderRadius: "12px",
-          padding: "24px",
-          gap: 22,
-        }}
-      >
+      <FixableBox isFixed={isFixed}>
         <H2 mode="Rift" size={18} color="rgba(255, 255, 255, 0.80)">
           Auction
         </H2>
 
         <Box style={{ gap: 8 }}>
-          <ResponsiveBox direction="row" style={{ gap: "8px" }}>
-            <Box
-              style={{
-                borderRadius: "8px",
-                backgroundColor: "#202831",
-                padding: "8px 12px",
-                gap: "4px",
-                flex: 1,
-              }}
-            >
-              <H4
-                mode="Rift"
-                size={18}
-                color="#9099A3"
-                transform="uppercase"
-                ts="normal"
-              >
-                auction start date
-              </H4>
-              <span className="dateStyle">24.10.2022</span>
-            </Box>
-
-            <Box
-              style={{
-                borderRadius: "8px",
-                backgroundColor: "#202831",
-                padding: "8px 12px",
-                gap: 4,
-                flex: 1,
-              }}
-            >
-              <h4>auction end date</h4>
-              <span className="dateStyle">07.11.2022</span>
-            </Box>
+          <ResponsiveBox direction="column">
+            <AuctionDateBox title="auction start date" value="24.10.2022" />
+            <AuctionDateBox title="auction end date" value="07.11.2022" />
           </ResponsiveBox>
 
-          <Box
-            style={{
-              borderRadius: "8px",
-              backgroundColor: "#202831",
-              padding: "8px",
-              gap: 4,
-              flex: 1,
-            }}
-          >
-            <H4
-              mode="Rift"
-              size={12}
-              color="#9099A3"
-              transform="uppercase"
-              ts="normal"
-            >
-              auction countdown in
-            </H4>
-            <Box direction="row" style={{ gap: "4px" }}>
-              <Box
-                style={{
-                  width: isFixed ? "138px" : "auto",
-                  borderRadius: "8px",
-                  backgroundColor: "#171F2C",
-                  padding: "4px 12px",
-                  gap: 4,
-                  flex: 1,
-                  alignContent: "center",
-                }}
-              >
-                <span
-                  style={{
-                    color: "rgba(255, 255, 255, 0.80)",
-                    textAlign: "center",
-                    fontFamily: "riftMedium",
-                    fontSize: "24px",
-                    fontWeight: 600,
-                    lineHeight: "32px",
-                    /* 133.333% */
-                  }}
-                >
-                  9
-                  <span
-                    style={{
-                      color: "rgba(144, 153, 163, 0.80)",
-                      textAlign: "center",
-                      fontFamily: "riftMedium",
-                      fontSize: "16px",
-                      fontWeight: 700,
-                      lineHeight: "24px",
-                      paddingLeft: 2,
-                    }}
-                  >
-                    D
-                  </span>
-                </span>
-              </Box>
-
-              <Box
-                style={{
-                  width: isFixed ? "138px" : "auto",
-                  borderRadius: "8px",
-                  backgroundColor: "#171F2C",
-                  padding: "4px 12px",
-                  gap: 4,
-                  flex: 1,
-                  alignContent: "center",
-                }}
-              >
-                <span
-                  style={{
-                    color: "rgba(255, 255, 255, 0.80)",
-                    textAlign: "center",
-                    fontFamily: "riftMedium",
-                    fontSize: "24px",
-                    fontWeight: 600,
-                    lineHeight: "32px",
-                    /* 133.333% */
-                  }}
-                >
-                  14
-                  <span
-                    style={{
-                      color: "rgba(144, 153, 163, 0.80)",
-                      textAlign: "center",
-                      fontFamily: "riftMedium",
-                      fontSize: "16px",
-                      fontWeight: 700,
-                      lineHeight: "24px",
-                      paddingLeft: 2,
-                    }}
-                  >
-                    H
-                  </span>
-                </span>
-              </Box>
-              <Box
-                style={{
-                  width: isFixed ? "138px" : "auto",
-                  borderRadius: "8px",
-                  backgroundColor: "#171F2C",
-                  padding: "4px 12px",
-                  gap: 4,
-                  flex: 1,
-                  alignContent: "center",
-                }}
-              >
-                <span
-                  style={{
-                    color: "rgba(255, 255, 255, 0.80)",
-                    textAlign: "center",
-                    fontFamily: "riftMedium",
-                    fontSize: "24px",
-                    fontWeight: 600,
-                    lineHeight: "32px",
-                    /* 133.333% */
-                  }}
-                >
-                  29
-                  <span
-                    style={{
-                      color: "rgba(144, 153, 163, 0.80)",
-                      textAlign: "center",
-                      fontFamily: "riftMedium",
-                      fontSize: "16px",
-                      fontWeight: 700,
-                      lineHeight: "24px",
-                      paddingLeft: 2,
-                    }}
-                  >
-                    M
-                  </span>
-                </span>
-              </Box>
-              <Box
-                style={{
-                  width: isFixed ? "138px" : "auto",
-                  borderRadius: "8px",
-                  backgroundColor: "#171F2C",
-                  padding: "4px 12px",
-                  gap: 4,
-                  flex: 1,
-                  alignContent: "center",
-                }}
-              >
-                <span
-                  style={{
-                    color: "rgba(255, 255, 255, 0.80)",
-                    textAlign: "center",
-                    fontFamily: "riftMedium",
-                    fontSize: "24px",
-                    fontWeight: 600,
-                    lineHeight: "32px",
-                  }}
-                >
-                  52
-                  <span
-                    style={{
-                      color: "rgba(144, 153, 163, 0.80)",
-                      textAlign: "center",
-                      fontFamily: "riftMedium",
-                      fontSize: "16px",
-                      fontWeight: 700,
-                      lineHeight: "24px",
-                      paddingLeft: 2,
-                    }}
-                  >
-                    S
-                  </span>
-                </span>
-              </Box>
-            </Box>
-          </Box>
+          <AuctionCountDownBox />
 
           <Box
             direction="row"
@@ -370,21 +158,44 @@ const AuctionSide: React.FC<Props> = ({ isFixed }) => {
           button={<TermsDisclosureButton />}
           content={<TermsDisclosureContent />}
         />
-      </Box>
+      </FixableBox>
     </HidableBox>
   );
 };
 
+interface BoxProps {
+  isFixed: boolean;
+}
+
+const FixableBox = styled(Box)<BoxProps>`
+  position: ${({ isFixed }) => (isFixed ? "sticky" : "static")};
+  right: 0;
+  top: 120;
+  width: 328px;
+  background-color: #171f2c;
+  border-radius: 12px;
+  padding: 16px;
+  gap: 22px;
+
+  @media (min-width: 768px) {
+    width: 344px;
+    padding: 24px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 628px;
+  }
+`;
+
 const ResponsiveBox = styled(Box)`
-  @media (max-width: 768px) {
+  gap: 8px;
+  flex-direction: row;
+  @media (max-width: 1439px) {
     flex-direction: column;
   }
 `;
 
-interface HidableBoxProps {
-  isFixed: boolean;
-}
-const HidableBox = styled(Box)<HidableBoxProps>`
+const HidableBox = styled(Box)<BoxProps>`
   @media (max-width: 1439px) {
     display: ${({ isFixed }) => (isFixed ? "none" : "flex")};
   }

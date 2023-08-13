@@ -18,3 +18,5 @@ export type AttributeType = Pick<TabType, "title"> & {
 
 // inheritance  id,title,value of attribute type
 export type DetailType = Omit<AttributeType, "type" | "percent">;
+
+export type CountDownType = Omit<AttributeType, "percent" | "title">;
