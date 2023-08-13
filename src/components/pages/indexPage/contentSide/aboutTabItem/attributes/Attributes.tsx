@@ -27,9 +27,10 @@ const GridContainer = styled.section`
   gap: 8px;
   overflow-x: auto;
 
-  @media (min-width: 760px) {
-    grid-template-columns: 1fr 1fr; /*same width with 1fr*/
-  }
+  /* Safari-specific adjustments */
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
 `;
 
 const Container = styled(Box)`
