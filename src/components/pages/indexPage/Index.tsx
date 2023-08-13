@@ -15,11 +15,8 @@ const MainWrapper = styled.main`
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 24px;
-
-  @media (max-width: 360px) {
-    flex-direction: column;
-  }
 `;
 
 export default Index;

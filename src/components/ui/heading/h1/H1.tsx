@@ -5,10 +5,10 @@ const H1 = styled.h1`
   font-family: "riftMedium";
   font-weight: 700;
   font-style: italic;
-  font-size: 48px;
+  font-size: 32px;
 
-  @media (max-width: 360px) {
-    font-size: 32px;
+  @media (min-width: 768px) {
+    font-size: 48px;
   }
 `;
 

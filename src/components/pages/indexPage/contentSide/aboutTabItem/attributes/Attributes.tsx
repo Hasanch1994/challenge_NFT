@@ -12,6 +12,7 @@ const Attributes = () => {
         backgroundColor: "#171F2C",
         boxShadow: "0px 5px 10px 0px rgba(0, 0, 0, 0.25)",
         gap: "16px",
+        borderRadius: "12px",
       }}
     >
       <H3 mode="Rift" size={24} transform="uppercase" ts="italic">

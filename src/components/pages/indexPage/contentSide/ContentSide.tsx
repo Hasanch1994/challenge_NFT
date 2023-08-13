@@ -31,13 +31,12 @@ const ContentSide: React.FC = () => {
       style={{
         display: "flex",
         flexDirection: "column",
+        overflow: "auto",
         flex: 1,
       }}
     >
-      <Box
+      <ContainerContentBox
         style={{
-          width: "580px",
-          gap: "24px",
           overflowY: "auto",
         }}
       >
@@ -46,7 +45,7 @@ const ContentSide: React.FC = () => {
         />
         <H1>{nftTitle}</H1>
 
-        <ResponsiveBox direction="row" style={{gap:"16px"}}>
+        <ResponsiveBox direction="row" style={{ gap: "16px" }}>
           <Box style={{ flex: 1 }}>
             <ResponsiveImage
               src={ImagePoint}
@@ -73,32 +72,57 @@ const ContentSide: React.FC = () => {
         >
           <TabList tabs={tabs} />
         </Box>
-      </Box>
+      </ContainerContentBox>
     </div>
   );
 };
 
+const ContainerContentBox = styled(Box)`
+  gap: 24px;
+  overflow-y: scroll;
+  @media screen and (min-width: 360px) {
+    width: 328px;
+  }
+
+  @media screen and (min-width: 760px) {
+    width: 704px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 580px;
+  }
+`;
+
 const ResponsiveImage = styled(Image)`
-  @media (max-width: 768px) {
+  @media (min-width: 360px) {
+    width: 328px;
+    height: 328px;
+  }
+
+  @media (min-width: 768px) {
     width: 344px;
     height: 344px;
   }
 
-  @media (max-width: 360px) {
-    width: 328px;
-    height: 328px;
+  @media (min-width: 1440px) {
+    width: 580px;
+    height: 580px;
   }
 `;
 
 const SmallAuction = styled(Box)`
-  @media (min-width: 1360px) {
+  @media (min-width: 1440px) {
     display: none;
   }
 `;
 
 const ResponsiveBox = styled(Box)`
-  @media (max-width: 360px) {
+  @media (min-width: 360px) {
     flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
   }
 `;
 

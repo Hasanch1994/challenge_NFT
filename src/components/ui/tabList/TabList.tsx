@@ -44,11 +44,11 @@ interface TabItemProps {
 const TabItem = styled.li<TabItemProps>`
   color: ${({ active }) => (active ? "#00b4db" : "#FFF")};
   font-family: "riftBold";
-  font-size: 30px;
+  font-size: 24px;
   font-style: italic;
   line-height: normal;
   display: inline-block;
-  margin-right:24px;
+  margin-right: 16px;
   cursor: pointer;
   transition: color ease-in-out 0.2s;
   &:hover {
@@ -59,9 +59,9 @@ const TabItem = styled.li<TabItemProps>`
     color: #00b4db;
   }
 
-  @media (max-width: 360px) {
-    font-size: 24px;
-    margin-right:16px;
+  @media (min-width: 760px) {
+    font-size: 30px;
+    margin-right: 24px;
   }
 `;
 

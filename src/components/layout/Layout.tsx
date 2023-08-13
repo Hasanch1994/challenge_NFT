@@ -16,18 +16,23 @@ const Layout: React.FC = () => {
 const Container = styled.div`
   max-width: 1440px;
   display: flex;
+  justify-content:center;
   margin: 0 auto;
 `;
 
 const Main = styled.main`
-  padding: 32px 104px;
   margin-top: 100px;
+  display: flex;
 
-  @media (max-width: 768px) {
+  @media (min-width: 1440px) {
+    padding: 32px 104px;
+  }
+
+  @media (min-width: 768px) {
     padding: 24px 32px;
   }
 
-  @media (max-width: 360px) {
+  @media (min-width: 360px) {
     padding: 24px 16px;
   }
 `;

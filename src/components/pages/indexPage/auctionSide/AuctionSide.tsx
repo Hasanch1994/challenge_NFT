@@ -13,16 +13,12 @@ interface Props {
 
 const AuctionSide: React.FC<Props> = ({ isFixed }) => {
   return (
-    <HidableBox
-      isFixed={isFixed}
-      direction="column"
-      style={{
-        flex: 1,
-      }}
-    >
+    <HidableBox isFixed={isFixed} direction="column">
       <Box
         style={{
-          position: isFixed ? "fixed" : "static",
+          position: isFixed ? "sticky" : "static",
+          right: 0,
+          top: 120,
           width: isFixed ? "628px" : "auto",
           backgroundColor: "#171F2C",
           borderRadius: "12px",
@@ -389,7 +385,7 @@ interface HidableBoxProps {
   isFixed: boolean;
 }
 const HidableBox = styled(Box)<HidableBoxProps>`
-  @media (max-width: 1360px) {
+  @media (max-width: 1439px) {
     display: ${({ isFixed }) => (isFixed ? "none" : "flex")};
   }
 `;

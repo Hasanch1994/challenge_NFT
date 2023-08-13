@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+
 interface BreadcrumbsProps {
   items: string[];
 }
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <BreadCrumbsWrapper>
       {items.map((item, index) => (
@@ -40,11 +54,22 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
               </svg>
             </BreadCrumbsArrow>
           )}
-          <BreadCrumbsText
-            isLastItem={index === items.length - 1 ? true : false}
-          >
-            {item}
-          </BreadCrumbsText>
+
+          {!isMobile ? (
+            <BreadCrumbsText isLastItem={index === items.length - 1}>
+              {item}
+            </BreadCrumbsText>
+          ) : (
+            <React.Fragment>
+              {index === 0 || index === items.length - 1 ? (
+                <BreadCrumbsText isLastItem={index === items.length - 1}>
+                  {item}
+                </BreadCrumbsText>
+              ) : (
+                <BreadCrumbsDots>...</BreadCrumbsDots>
+              )}
+            </React.Fragment>
+          )}
         </React.Fragment>
       ))}
     </BreadCrumbsWrapper>
@@ -69,12 +94,20 @@ const BreadCrumbsText = styled.span<BreadCrumbsTextProps>`
   margin: 0 12px;
   color: ${({ isLastItem }) => (isLastItem ? "white" : "#9099a3")};
   font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-family: "acuminproRegular";
   font-weight: 400;
   &:hover {
     color: white;
     cursor: pointer;
   }
+`;
+
+const BreadCrumbsDots = styled.span`
+  margin: 0 12px;
+  color: #9099a3;
+  font-size: 14px;
 `;
 
 export default Breadcrumbs;

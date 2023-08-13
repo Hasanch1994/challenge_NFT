@@ -39,7 +39,7 @@ const ToolbarItem = styled.div<Props>`
   border-radius: 10px;
   background-color: #202831;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.16);
-  display: ${({ index }) => (index !== 3 ? "flex" : "none")};
+  display: ${({ index }) => (index === 3 || index === 0 ? "flex" : "none")};
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -51,8 +51,8 @@ const ToolbarItem = styled.div<Props>`
       padding-right: 12px;
     `}
 
-  @media (max-width: 768px) {
-    display: ${({ index }) => (index === 2 || index === 1 ? "none" : "flex")};
+  @media (min-width: 1440px) {
+    display: ${({ index }) => (index !== 3 ? "flex" : "none")};
   }
 `;
 

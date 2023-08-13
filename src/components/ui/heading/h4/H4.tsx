@@ -12,13 +12,9 @@ const H4 = styled.h4<Props>`
   font-family: ${({ mode }) =>
     mode === "Rift" ? "riftBold" : "acuminproRegular"};
   font-weight: 700;
-  color: ${({ color }) =>
-  color
-      ? 
-  color
-  : "white"};
+  color: ${({ color }) => (color ? color : "white")};
   font-style: ${({ ts }) => (ts ? ts : "normal")};
-font-size: ${({ size }) => size}px;
+  font-size: ${({ size }) => size}px;
   text-transform: ${({ transform }) => transform};
 `;
 

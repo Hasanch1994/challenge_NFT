@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { navigationItems } from "../../../../fakeData/navigation";
 
 const HeaderNavigation: React.FC = () => {
@@ -26,21 +26,22 @@ const HeaderNavigation: React.FC = () => {
                 </svg>
               </Anchor>
             </ListItem>
-          ))} 
+          ))}
       </UnorderedList>
     </Nav>
   );
 };
 
-const hideArrow = css`
-  @media (max-width: 1280px) {
-    display: none;
-  }
-`;
+// const hideArrow = css`
+//   @media (max-width: 1280px) {
+//     display: none;
+//   }
+// `;
 
 const Nav = styled.nav`
-  @media (max-width: 768px) {
-    display: none;
+  display: none;
+  @media (min-width: 1440px) {
+    display: flex;
   }
 `;
 
@@ -52,11 +53,6 @@ const ListItem = styled.li`
   display: inline-block;
   padding-left: 15px;
   padding-right: 15px;
-
-  @media (max-width: 1440px) {
-    padding-left: 7px;
-    padding-right: 7px;
-  }
 `;
 
 const Anchor = styled.li`
@@ -70,14 +66,6 @@ const Anchor = styled.li`
   display: flex;
   align-items: center;
   cursor: pointer;
-
-  @media (max-width: 1440px) {
-    font-size: 14px;
-  }
-
-  .hideArrow {
-    ${hideArrow}
-  }
 `;
 
 export default HeaderNavigation;
